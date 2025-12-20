@@ -1,8 +1,8 @@
 plugins {
     java
     id("org.springframework.boot") version "2.7.18"
-    id("io.spring.dependency-management") version "1.0.15.RELEASE"
-    id("org.sonarqube") version "6.0.1.5171"
+    id("io.spring.dependency-management") version "1.1.7"
+    id("org.sonarqube") version "6.3.1.5724"
 }
 
 group = "com.example"
