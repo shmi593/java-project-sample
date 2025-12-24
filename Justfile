@@ -39,8 +39,9 @@ app-run: infra-start
     export AWS_REGION=us-east-1
     export AWS_ACCESS_KEY_ID=test
     export AWS_SECRET_ACCESS_KEY=test
-    export AWS_SECRETSMANAGER_ENDPOINT=http://localhost:4566
     export SPRING_PROFILES_ACTIVE=local
+    export SPRING_CLOUD_AWS_SECRETSMANAGER_ENDPOINT=http://localhost:4566
+    export SPRING_CLOUD_AWS_REGION_STATIC=us-east-1
     ./gradlew bootRun
 
 # Build the project (e.g., just app-build or just app-build "-x test")

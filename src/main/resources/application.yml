@@ -12,8 +12,7 @@ spring:
     url: ${db.url}
     username: ${db.username}
     password: ${db.password}
-
-cloud:
-  aws:
-    region:
-      static: ap-northeast-1
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-1
