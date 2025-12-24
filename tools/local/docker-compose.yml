@@ -1,7 +1,7 @@
 services:
   mysql:
     image: mysql:8.4
-    container_name: spring-boot-template-mysql
+    container_name: app-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app_db
@@ -18,7 +18,23 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  localstack:
+    image: localstack/localstack
+    container_name: app-localstack
+    environment:
+      SERVICES: secretsmanager
+      DEFAULT_REGION: us-east-1
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./init-localstack:/etc/localstack/init/ready.d
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:4566/_localstack/health" ]
       interval: 10s
       timeout: 5s
       retries: 5
