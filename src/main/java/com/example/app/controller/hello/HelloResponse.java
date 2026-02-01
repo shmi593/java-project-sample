@@ -1,4 +1,4 @@
-package com.example.app.hello;
+package com.example.app.controller.hello;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

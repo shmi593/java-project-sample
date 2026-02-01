@@ -1,5 +1,7 @@
-package com.example.app.order;
+package com.example.app.infra;
 
+import com.example.app.domain.order.OrderStatus;
+import com.example.app.usecase.order.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

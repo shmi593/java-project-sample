@@ -1,4 +1,4 @@
-package com.example.app.order;
+package com.example.app.domain.order;
 
 /**
  * 注文ステータス

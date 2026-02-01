@@ -1,5 +1,7 @@
-package com.example.app.order;
+package com.example.app.usecase.order;
 
+import com.example.app.domain.order.OrderStatus;
+import com.example.app.infra.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -18,26 +18,21 @@ Java 17 + Spring Boot 3.5.9 のサンプルプロジェクトです。
 ```
 src/main/java/com/example/app/
 ├── SpringBootTemplateApplication.java
-├── hello/
-│   ├── HelloController.java
-│   └── HelloResponse.java
-└── order/
-    ├── CreateOrderRequest.java
-    ├── Order.java
-    ├── OrderController.java
-    ├── OrderRepository.java
-    └── OrderStatus.java
+├── controller/
+├── domain/
+├── usecase/
+└── infra/
 ```
 
 ## ライブラリ
 
-| カテゴリ       | ライブラリ        | バージョン |
-| -------------- | ----------------- | ---------- |
-| フレームワーク | Spring Boot       | 3.5.9      |
-| Web            | Spring MVC        | (管理)     |
-| データアクセス | Spring Data JPA   | (管理)     |
-| AWS            | Spring Cloud AWS  | 3.4.2      |
-| DB ドライバ    | MySQL Connector/J | (管理)     |
-| テスト DB      | H2 Database       | (管理)     |
-| JSON           | Jackson           | (管理)     |
-| ユーティリティ | Lombok            | (管理)     |
+| カテゴリ    | ライブラリ             | バージョン |
+|---------|-------------------|-------|
+| フレームワーク | Spring Boot       | 3.5.9 |
+| Web     | Spring MVC        | (管理)  |
+| データアクセス | Spring Data JPA   | (管理)  |
+| AWS     | Spring Cloud AWS  | 3.4.2 |
+| DB ドライバ | MySQL Connector/J | (管理)  |
+| テスト DB  | H2 Database       | (管理)  |
+| JSON    | Jackson           | (管理)  |
+| ユーティリティ | Lombok            | (管理)  |

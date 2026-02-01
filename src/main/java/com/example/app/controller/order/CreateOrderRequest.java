@@ -1,4 +1,4 @@
-package com.example.app.order;
+package com.example.app.controller.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

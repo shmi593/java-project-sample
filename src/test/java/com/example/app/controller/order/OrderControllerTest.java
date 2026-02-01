@@ -1,5 +1,8 @@
-package com.example.app.order;
+package com.example.app.controller.order;
 
+import com.example.app.domain.order.OrderStatus;
+import com.example.app.infra.Order;
+import com.example.app.usecase.order.OrderRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 
-import static com.example.app.order.OrderController.API_PATH;
+import static com.example.app.controller.order.OrderController.API_PATH;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.startsWith;
 import static org.mockito.ArgumentMatchers.any;

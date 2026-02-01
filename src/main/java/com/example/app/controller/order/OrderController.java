@@ -1,5 +1,8 @@
-package com.example.app.order;
+package com.example.app.controller.order;
 
+import com.example.app.domain.order.OrderStatus;
+import com.example.app.infra.Order;
+import com.example.app.usecase.order.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
