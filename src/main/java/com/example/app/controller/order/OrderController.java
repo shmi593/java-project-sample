@@ -1,7 +1,7 @@
 package com.example.app.controller.order;
 
+import com.example.app.domain.order.Order;
 import com.example.app.domain.order.OrderStatus;
-import com.example.app.infra.Order;
 import com.example.app.usecase.order.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -38,9 +38,9 @@ public class OrderController {
     /**
      * 注文詳細取得
      */
-    @GetMapping(API_PATH + "/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
-        return orderRepository.findById(id)
+    @GetMapping(API_PATH + "/{orderNumber}")
+    public ResponseEntity<Order> getOrderByOrderNumber(@PathVariable String orderNumber) {
+        return orderRepository.findByOrderNumber(orderNumber)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -52,12 +52,12 @@ public class OrderController {
     public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
         String orderNumber = generateOrderNumber();
 
-        Order order = Order.builder()
-                .orderNumber(orderNumber)
-                .customerName(request.getCustomerName())
-                .totalAmount(request.getTotalAmount())
-                .status(OrderStatus.PENDING)
-                .build();
+        Order order = new Order(
+                orderNumber,
+                request.getCustomerName(),
+                request.getTotalAmount().doubleValue(),
+                OrderStatus.PENDING
+        );
 
         Order savedOrder = orderRepository.save(order);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedOrder);

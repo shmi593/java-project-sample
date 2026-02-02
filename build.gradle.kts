@@ -24,6 +24,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind")
     implementation("io.awspring.cloud:spring-cloud-aws-starter")
     implementation("io.awspring.cloud:spring-cloud-aws-starter-secrets-manager")
+    implementation("com.fasterxml.uuid:java-uuid-generator:5.1.0")
     runtimeOnly("com.mysql:mysql-connector-j")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

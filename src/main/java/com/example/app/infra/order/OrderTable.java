@@ -1,12 +1,12 @@
-package com.example.app.infra;
+package com.example.app.infra.order;
 
 import com.example.app.domain.order.OrderStatus;
+import com.example.app.infra.common.UuidV7Generator;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -15,9 +15,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 /**
  * 注文エンティティ
@@ -28,11 +30,12 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class OrderTable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @UuidGenerator(algorithm = UuidV7Generator.class)
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
 
     @Column(name = "order_number", nullable = false, unique = true, length = 50)
     private String orderNumber;
